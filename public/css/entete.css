@@ -44,6 +44,10 @@ main {
 .wrapper{
     padding: 0 20px 0 20px;
 }
+
+.wrapper-contenu{
+  padding: 30px 54px 30px 54px;
+}
   
   @media only screen and (min-width: 576px) {
     .navbarEntete-nav {

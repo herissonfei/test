@@ -1,0 +1,31 @@
+.button-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Set the height of the container */
+    margin: 20px 0 10px 0;
+  }
+
+  /* .button-middle button{
+    background-color: #0e8388;
+  }
+
+  .button-middle:hover button{
+    background-color: #0e8388;
+  } */
+
+  .button-right {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin: 20px 0 10px 0;
+    
+  }
+
+ .elmFormBoutteilCellier {
+    display: flex !important;
+  }
+
+
+  
+  

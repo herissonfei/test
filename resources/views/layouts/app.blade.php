@@ -26,7 +26,7 @@
         <nav class="navbarEntete wrapper">
             <ul class="navbarEntete-nav">
                 <li class="navEntete-item">
-                    <a href="/" ><img src="{{ asset('img/vino.png') }}" alt="logo" class="logo"></a>
+                    <a href="/home" ><img src="{{ asset('img/vino.png') }}" alt="logo" class="logo"></a>
                     
                 </li>
                 <span class="spacer"></span>
@@ -49,15 +49,12 @@
                             Hi, {{ Auth::user()->name }}
                         </a>
                     </li>
-                    <li class="navEntete-item">
-                        <a class="navEntete-link" href="#" role="button" href="#}}">
-                            Mes celliers
-                        </a>
-                    </li>
+                   
                     <li class="navEntete-item">
                         <a class="" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
+                            >
+                            <!-- onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();" -->
                             {{ __('Logout') }}
                         </a>
 
@@ -71,7 +68,7 @@
         </nav>
 
 
-        <main class="">
+        <main class="wrapper-contenu">
             @yield('content')
         </main>
 

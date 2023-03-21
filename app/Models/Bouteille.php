@@ -13,6 +13,6 @@ class Bouteille extends Model
         'nom',
         'pays',
         'type',
-        'prix_saq'
+        'prix'
     ];
 }

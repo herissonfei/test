@@ -10,6 +10,7 @@ class Cellier extends Model
     use HasFactory;
 
     protected $fillable = [
-        'quantite'
+        'nom',
+        'user_id'
     ];
 }

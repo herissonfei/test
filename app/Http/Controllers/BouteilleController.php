@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Cellier;
 use App\Models\Bouteille;
@@ -22,11 +23,11 @@ class BouteilleController extends Controller
     public function index()
     {
         //
-        // $bouteilles = Bouteille::all();
+        $bouteilles = Bouteille::all();
         
         // return $bouteilles;
 
-        // return response()->json($bouteilles);
+        return response()->json($bouteilles);
     }
 
     /**
@@ -108,17 +109,7 @@ class BouteilleController extends Controller
         //
     }
 
-    public function getListeBouteilleCellier(Cellier $cellier)
-    {
-        $bouteilles = Bouteilles_user::select('bouteilles_users.id','bouteilles.id as id_bouteilles', 'celliers.id as id_bouteille_cellier','bouteilles_users.bouteille_id','bouteilles_users.date_achat','bouteilles_users.quantite', 'bouteilles.nom', 'bouteilles.prix_saq','bouteilles.type', 'bouteilles.image', 'bouteilles.code_saq', 'bouteilles.url_saq', 'bouteilles.pays', 'bouteilles.description', 'types.type','users.id as user_Id')
-        ->join('bouteilles', 'bouteilles.id', '=', 'bouteilles_users.bouteille_id')
-        ->join('celliers', 'celliers.id', '=', 'bouteilles_users.cellier_id')
-        ->join('types', 'types.id', '=', 'bouteilles.type')
-        ->join('users', 'users.id', '=', 'celliers.user_id')
-        ->get();
-        
-        return response()->json($bouteilles);
-    }
+     
 
     public function modifierUnBouteille(Request $request, Cellier $cellier, $id)
     {
@@ -132,7 +123,7 @@ class BouteilleController extends Controller
         DB::table('bouteilles')->where('id', $id)->update([
             'nom' => $request['nom'],
             'pays' => $request['pays'],
-            'prix_saq' => $request['prix_saq'],
+            'prix' => $request['prix'],
             'type' => $request['type']
         ]);
 

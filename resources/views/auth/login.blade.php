@@ -15,7 +15,7 @@
                 @enderror
         <label for="password">Mot de passe:</label>
         <input type="password" id="password" name="password" class=" @error('password') is-invalid @enderror" required autocomplete="current-password">
-                @error('email')
+                @error('password')
                     <span class="error_message" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
